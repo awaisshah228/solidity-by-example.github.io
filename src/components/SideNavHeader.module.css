@@ -30,3 +30,6 @@
 .version {
   margin-right: 5px;
 }
+.active {
+  color: var(--active);
+}

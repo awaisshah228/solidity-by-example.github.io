@@ -1,5 +1,6 @@
 :root {
   --sidebar-width: 300px;
+  --active: #008cff;
 }
 
 body {
@@ -52,8 +53,7 @@ code {
     monospace;
   color: rgb(231, 76, 60);
 }
-a,
-a:visited {
+a {
   color: #261a3b;
 }
 h2 {
