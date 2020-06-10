@@ -1,10 +1,21 @@
 .component {
   display: flex;
+  flex-direction: row;
+}
+.main {
+  flex: 1;
+  /* side bar width */
+  margin-left: 300px;
+  padding: 25px;
+  padding-top: 0;
+}
+.content {
+  display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
-
-.main {
+.routes {
   display: flex;
   flex: 1;
   flex-direction: column;
