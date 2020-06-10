@@ -1,11 +1,16 @@
 import React from "react"
-import styles from "./Header.module.css"
+import styles from "./SideNavHeader.module.css"
 import logo from "./logo.svg"
 
-function Header() {
+interface Props {}
+
+const SideNavHeader: React.FC<Props> = () => {
   // NOTE: need to use links for versions so that react-snap can crawl
   return (
     <div className={styles.component}>
+      {/*}
+      <i className="fa fa-bars"></i>
+  */}
       <a href="/">
         <img src={logo} alt="logo" className={styles.logo} />
       </a>
@@ -24,4 +29,4 @@ function Header() {
   )
 }
 
-export default Header
+export default SideNavHeader

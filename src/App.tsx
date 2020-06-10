@@ -1,18 +1,32 @@
 import React from "react"
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route, Redirect, useLocation } from "react-router-dom"
 import styles from "./App.module.css"
-import Header from "./components/Header"
 import Footer from "./components/Footer"
 import SideNav from "./components/SideNav"
 import routes from "./routes"
+import { ROUTES_BY_CATEGORY as ROUTES_BY_CATEGORY_ver_0_5 } from "./pages/0.5"
+import { ROUTES_BY_CATEGORY as ROUTES_BY_CATEGORY_ver_0_6 } from "./pages/0.6"
 
-function App() {
+function getSideNavRoutes(version: string) {
+  if (version === "0.5") {
+    return ROUTES_BY_CATEGORY_ver_0_5
+  }
+  return ROUTES_BY_CATEGORY_ver_0_6
+}
+
+interface Props {}
+
+const App: React.FC<Props> = () => {
+  const { pathname } = useLocation()
+  const version = pathname.split("/")[0]
+
+  const sideNavRoutes = getSideNavRoutes(version)
+
   return (
     <div className={styles.component}>
-      <SideNav routes={routes} />
+      <SideNav routesByCategory={sideNavRoutes} />
       <div className={styles.main}>
         <div className={styles.content}>
-          <Header />
           <div className={styles.routes}>
             <Switch>
               {routes.map((route) => (

@@ -1,27 +1,34 @@
 import React from "react"
+import SideNavHeader from "./SideNavHeader"
+import styles from "./SideNav.module.css"
 
-interface Props {
-  routes: { path: string }[]
+interface Route {
+  path: string
+  title: string
 }
 
-const SideNav: React.FC<Props> = ({ routes }) => {
+interface Props {
+  routesByCategory: { title: string; routes: Route[] }[]
+}
+
+const SideNav: React.FC<Props> = ({ routesByCategory }) => {
   return (
-    <div
-      style={{
-        width: 300,
-        backgroundColor: "#fafafa",
-        position: "fixed",
-        left: 0,
-        top: 0,
-        height: "100vh",
-        overflowY: "auto",
-      }}
-    >
-      <ul>
-        {routes.map((route) => (
-          <li key={route.path}>{route.path}</li>
-        ))}
-      </ul>
+    <div className={styles.component}>
+      <SideNavHeader />
+      {routesByCategory.map(({ routes, title }, i) => (
+        <div key={i}>
+          {title && <h3>{title}</h3>}
+
+          <ul>
+            {routes.map(({ path, title }) => (
+              <li key={path}>
+                <a href={path}>{title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <div className={styles.footer}></div>
     </div>
   )
 }
