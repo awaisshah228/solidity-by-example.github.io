@@ -1,5 +1,5 @@
 .component {
-  width: 300px;
+  width: var(--sidebar-width);
   background-color: #fafafa;
   position: fixed;
   left: 0;

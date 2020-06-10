@@ -4,8 +4,7 @@
 }
 .main {
   flex: 1;
-  /* side bar width */
-  margin-left: 300px;
+  margin-left: var(--sidebar-width);
   padding: 25px;
   padding-top: 0;
 }
