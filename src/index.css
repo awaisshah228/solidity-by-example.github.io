@@ -11,6 +11,14 @@ body {
   color: #252519;
   min-width: 400px;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+}
+
 pre {
   padding: 20px;
   margin: 0;
