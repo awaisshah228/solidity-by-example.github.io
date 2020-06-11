@@ -1,0 +1,25 @@
+.component {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  background-color: #ffffff;
+  /* border-bottom: 1px solid #cccccc; */
+}
+.icon {
+  border: none;
+  /* outline: none; */
+  background: none;
+  color: #cccccc;
+  padding: 0 8px;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.icon:hover {
+  color: #333333;
+}

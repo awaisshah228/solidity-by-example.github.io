@@ -43,6 +43,8 @@ const SideNav: React.FC<Props> = (props) => {
   const version = getVersion(location)
   const routesByCategory = getRoutes(version)
 
+  // TODO scroll active link to top
+
   return (
     <div className={styles.component}>
       <SideNavHeader version={version} />

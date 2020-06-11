@@ -19,6 +19,7 @@
   flex: 1;
   flex-direction: column;
   margin: auto;
+  margin-top: var(--nav-height);
   padding: 10px;
   /* align-items: center; */
   /* background-color: red; */
